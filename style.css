@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid red;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: 850px;
+    width: 850px;
+    margin: 100px auto;
+}
+
+.box {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    margin: auto;
+
+}
+
+.circled {
+
+}
+
+.crossed {
+
+}
