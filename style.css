@@ -25,9 +25,13 @@
 }
 
 .circled {
-
+    /* background-color: rgb(72, 143, 2); */
+    background-image: url(/images/circle.png);
+    background-size: 104%;
 }
 
 .crossed {
-
+    /* background-color: brown */
+    background-image: url(/images/cross.png);
+    background-size: 97%;
 }
