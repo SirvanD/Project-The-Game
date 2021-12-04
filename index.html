@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="grid-container">
+    
+      
+      </div>
+    <div class="grid-container" id="color-change-2x">
         
         <div id="one" class="box"></div>
         <div id="two" class="box"></div>
@@ -20,8 +23,58 @@
         <div id="eight" class="box"></div>
         <div id="nine" class="box"></div>
 
-
+        
     </div>
+    <div class="results"> 
+        <span class="messageSpan "></span>
+        <!-- <span class="resetButton vibrate-1" >Reset</span> -->
+        
+        
+        <!-- Modal -->
+        <div class="vert-mid">
+            <button class="play-again-btn"> Play Again </button>
+            <button class="modal-btn"> Reset </button>
+            
+            </div>
+            
+            <div class="modal">
+            
+                <div class="modal__inner">
+                    
+                    <div class="modal__header">
+                    <h2>Enter your names or play default!</h2>
+                    <button class="modal__close">
+                             &#x2716;
+                    </button>
+                    
+                    </div>
+                    
+                    <div class="modal__content">
+                        <div>Player One: <input type="text" value="X" name="" id="player-one-name"> </div>
+                        <div> Player Two: <input type="text" value="O" name="" id="player-two-name"> </div>
+                    </div>
+                    <button id="start-game-btn">Start</button>
+                    
+            
+                </div><!-- /modal__content -->
+                
+            </div>
+    
+    </div> 
+    <div class="panel">
+        
+        <div class="roundsPlayed">Rounds Played: 
+            <span class="roundsCounter"> 0 </span></div>
+        <div class="playerX">Player 
+            <span class="player-one-name-span"> X </span>: <span class="playerXWins"> 0 </span></div>
+
+        <div class="playerO">Player 
+            <span class="player-two-name-span"> O </span>: 
+                <span class="playerOWins"> 0 </span></div>
+        
+        <div class="draws">Draws: <span class="drawCounter"> 0 </span></div>
+     </div>
+
     <script src="game.js"></script>
 </body>
 </html>
