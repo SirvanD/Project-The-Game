@@ -17,7 +17,7 @@ Simulating Tic Tac Toe using vanilla JavaScript, HTML, CSS and animation webkits
 ## Upcoming
 
 <ul>
- <li> Fixing a couple of bugs including double click on a cell toggles players and shapes and improvement on responsiveness </li>
+ <li> Fixing a couple of bugs including double click on a cell toggles players/shapes and improvement on responsiveness </li>
  <li> Adding an option to play with AI </li>
  <li> Option to change the game board size </li>
  <li> LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity</li>
