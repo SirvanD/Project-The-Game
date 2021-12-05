@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Reem+Kufi:wght@600&display=swap');
+    </style>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,7 +47,8 @@
                 <div class="modal__inner">
                     
                     <div class="modal__header">
-                    <h2>Enter your names or play default!</h2>
+                        <h1>Let's Tic Tac Toe !</h1>
+                        <h2>Enter your names or play default...</h2>
                     <button class="modal__close">
                              &#x2716;
                     </button>
@@ -50,10 +56,10 @@
                     </div>
                     
                     <div class="modal__content">
-                        <div>Player One: <input type="text" value="X" name="" id="player-one-name"> </div>
-                        <div> Player Two: <input type="text" value="O" name="" id="player-two-name"> </div>
+                        <div><h2>Player One:</h2>  <input type="text" value="X" name="" id="player-one-name"> </div>
+                        <div> <h2>Player Two:</h2> <input type="text" value="O" name="" id="player-two-name"> </div>
                     </div>
-                    <button id="start-game-btn">Start</button>
+                    <button class="modal-btn" id="start-game-btn">Start</button>
                     
             
                 </div><!-- /modal__content -->
@@ -61,8 +67,9 @@
             </div>
     
     </div> 
+<div class="panel-container">
     <div class="panel">
-        <!-- s -->
+        
         <div class="roundsPlayed">Rounds Played: 
             <span class="roundsCounter"> 0 </span></div>
         <div class="playerX">Player 
@@ -73,7 +80,10 @@
                 <span class="playerOWins"> 0 </span></div>
         
         <div class="draws">Draws: <span class="drawCounter"> 0 </span></div>
-     </div>
+    </div>
+</div>
+
+    </body>
 
     <script src="game.js"></script>
 </body>

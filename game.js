@@ -9,10 +9,7 @@
 - define the functions for conditions where a user wins,looses or draw (array and conditions)
 - add event listeners for clicking on the divs to select one of the 2 choices
 - CSS the X and O designs/animations/transition
-
 - make it responsive
-
-
 - once basic works, work on the Bonus extensions
 - CSS a leaderboard for results and bonus parts/number of tries
 **/
@@ -26,13 +23,6 @@ const middleRight = document.querySelector('#six')
 const bottomLeft = document.querySelector('#seven')
 const bottomMiddle = document.querySelector('#eight')
 const bottomRight = document.querySelector('#nine')
-let roundsCounter = 0;
-let playerXWins = 0;
-let playerOWins = 0;
-let drawCounts = 0;
-let currentPlayer = "x"
-let cellArrayUserX = ['', '', '', '', '', '', '', '', '']
-let cellArrayUserO = ['', '', '', '', '', '', '', '', '']
 const messageBox = document.querySelector('.messageSpan')
 const roundsPlayed = document.querySelector('.roundsCounter')
 const playerXWinsSpan = document.querySelector('.playerXWins')
@@ -44,20 +34,25 @@ const playerOneNameInput = document.querySelector('#player-one-name')
 const playerTwoNameInput = document.querySelector('#player-two-name')
 const playerOneNameSpan=document.querySelector('.player-one-name-span')
 const playerTwoNameSpan=document.querySelector('.player-two-name-span')
+const modal = document.querySelector('.modal');
+const modalBtn = document.querySelector('.modal-btn');
+const modalCloseBtn = document.querySelector('.modal__close');
+const body = document.querySelector('body');
+const modalOverlay = document.createElement('div');
+modalOverlay.className = 'modal-overlay';
+let roundsCounter = 0;
+let playerXWins = 0;
+let playerOWins = 0;
+let drawCounts = 0;
+let currentPlayer = "x"
+let cellArrayUserX = ['', '', '', '', '', '', '', '', '']
+let cellArrayUserO = ['', '', '', '', '', '', '', '', '']
 let playerOne = 'X';
 let playerTwo = 'O';
-
-var modal = document.querySelector('.modal');
-var modalBtn = document.querySelector('.modal-btn');
-var modalCloseBtn = document.querySelector('.modal__close');
-var body = document.querySelector('body');
-var modalOverlay = document.createElement('div');
-modalOverlay.className = 'modal-overlay';
 //-----------------------------------
 //event listeners
 allBoxes.forEach (function(box) {
     box.addEventListener('click', handleUserClickedBox)
-    
 })
 //-----------------------------------
 //event listener for play again button
@@ -72,10 +67,11 @@ playerOne = playerOneNameInput.value;
 playerTwo = playerTwoNameInput.value;
 playerOneNameSpan.textContent = playerOne;
 playerTwoNameSpan.textContent = playerTwo;
-
+//Closing modal and remove overlay once game starts
 modalOverlay.classList.remove('is-open');
 modal.classList.remove('is-open');
 document.body.removeChild(modalOverlay);
+
 allBoxes.forEach (function(box) {
     //console.log(box.className)
     box.classList.remove('circled')
@@ -83,9 +79,7 @@ allBoxes.forEach (function(box) {
     cellArrayUserX = ['', '', '', '', '', '', '', '', '']
     cellArrayUserO = ['', '', '', '', '', '', '', '', '']
     //console.log(box.className)
-    
-    
-  }
+}
 )
     messageBox.textContent = `${playerOne}, you go first...`
     messageBox.classList.remove('wobble-hor-bottom')
@@ -98,11 +92,7 @@ allBoxes.forEach (function(box) {
     playerOWinsSpan.textContent = 0;
     drawCounterSpan.textContent = 0;
     currentPlayer = 'x';
-    
 }
-
-
-
 
 //-------------------------------------
 //Handle function for play again button
@@ -114,8 +104,6 @@ allBoxes.forEach (function(box) {
         cellArrayUserX = ['', '', '', '', '', '', '', '', '']
         cellArrayUserO = ['', '', '', '', '', '', '', '', '']
         //console.log(box.className)
-        
-        
       }
     )
         messageBox.textContent = `${playerOne}, you start... `
@@ -135,8 +123,6 @@ function handleUserClickedBox(event) {
         cellArrayUserX.push(event.target.id)
         winCheckUserX()
         messageBox.textContent = `${playerTwo}, your turn... `
-        
-
         currentPlayer = "o"
         //return event.target;
     } else if (currentPlayer == "o") {
@@ -234,24 +220,18 @@ function MessageFunc() {
     }
 }
 
-
 //modal function
 window.onload = function() {
+	openModal()
 	
-	//Variables
-	
-
-    
-
-	function openModal(e) {
-		//e.preventDefault();
+	function openModal() {
 		modalOverlay.classList.add('is-open');
 		modal.classList.add('is-open');
 		document.body.appendChild(modalOverlay);
         startGameBtn.addEventListener('click', handleStartGame)
 	}
 	
-	function closeModal(e) {
+	function closeModal() {
 		modalOverlay.classList.remove('is-open');
 		modal.classList.remove('is-open');
 		document.body.removeChild(modalOverlay);
@@ -260,17 +240,9 @@ window.onload = function() {
 	modalCloseBtn.addEventListener('click', closeModal);
 	modalOverlay.addEventListener('click', closeModal);
 	modalBtn.addEventListener('click', openModal);
-    //window.onload(openModal())
-	openModal()
+     
 }
 
-
-// How to add more modals - re-using the code
-// On key press 'esc', close the modal
-// Add in Accessability
-//Recactoring? toggle the class names? instead of add and remove, and then somehow for the modal overlay?
-
-// More advanced make this in prototyping/oop JS
 
     
     
