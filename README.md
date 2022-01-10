@@ -22,3 +22,6 @@ Simulating Tic Tac Toe using vanilla JavaScript, HTML, CSS and animation webkits
  <li> Option to change the game board size </li>
  <li> LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity</li>
 </ul>
+
+###Screenshot
+![Screenshot](Screenshot_Game.png)
